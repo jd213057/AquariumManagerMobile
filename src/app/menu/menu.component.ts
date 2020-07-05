@@ -109,24 +109,32 @@ getMusic(): string {
   }
 
 getNavBarFocus() {
-    const startButton = document.getElementById('start');
-    const helpButton = document.getElementById('help');
+    const reportsButton = document.getElementById('reports');
+    const dataButton = document.getElementById('data');
+    const boardsButton = document.getElementById('boards');
     const configButton = document.getElementById('config');
-    const scoreButton = document.getElementById('score');
-    const debugButton = document.getElementById('debug');
-    startButton.addEventListener('mouseenter', ( event ) => {
+    const watcherButton = document.getElementById('watcher');
+    reportsButton.addEventListener('mouseenter', ( event ) => {
     const e = event.target as HTMLElement;
     e.style.backgroundColor = 'cyan';
     }, false);
-    startButton.addEventListener('mouseleave', (event) => {
+    reportsButton.addEventListener('mouseleave', (event) => {
       const e = event.target as HTMLElement;
       e.style.backgroundColor = '';
     }, false);
-    helpButton.addEventListener('mouseenter', ( event ) => {
+    dataButton.addEventListener('mouseenter', ( event ) => {
       const e = event.target as HTMLElement;
       e.style.backgroundColor  = 'cyan';
     }, false);
-    helpButton.addEventListener('mouseleave', (event) => {
+    dataButton.addEventListener('mouseleave', (event) => {
+      const e = event.target as HTMLElement;
+      e.style.backgroundColor = '';
+    }, false);
+    boardsButton.addEventListener('mouseenter', ( event ) => {
+      const e = event.target as HTMLElement;
+      e.style.backgroundColor  = 'cyan';
+    }, false);
+    boardsButton.addEventListener('mouseleave', (event) => {
       const e = event.target as HTMLElement;
       e.style.backgroundColor = '';
     }, false);
@@ -138,19 +146,11 @@ getNavBarFocus() {
       const e = event.target as HTMLElement;
       e.style.backgroundColor = '';
     }, false);
-    scoreButton.addEventListener('mouseenter', ( event ) => {
+    watcherButton.addEventListener('mouseenter', ( event ) => {
       const e = event.target as HTMLElement;
       e.style.backgroundColor  = 'cyan';
     }, false);
-    scoreButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
-    debugButton.addEventListener('mouseenter', ( event ) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor  = 'cyan';
-    }, false);
-    debugButton.addEventListener('mouseleave', (event) => {
+    watcherButton.addEventListener('mouseleave', (event) => {
       const e = event.target as HTMLElement;
       e.style.backgroundColor = '';
     }, false);

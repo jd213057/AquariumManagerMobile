@@ -524,11 +524,11 @@ span, label {
 
 body {
   margin: 0px 0px 0px 0px !important;
-/*   margin: -50px 0px 0px -50px !important; */
 }
 
 .nav-bar {
   display: inline-flex;
+  padding-left: 32.5%;
   margin-top: 10px;
 }
 
@@ -538,55 +538,61 @@ body {
   padding-top: 10px;
   opacity: 80%;
   color: black;
-  width: 200px;
+  width: 60px;
   height: 60px;
   margin-left: 20px;
-  border-radius: 50% 20% / 10% 90%;
+  border-radius: 90%;
   border-color: darkblue;
   font-size: 22px;
   font-family: "Pirate Menu";
-  background-color: rgb(244, 226, 150);
+  background-color: white;
+  opacity: 70%;
   cursor: url("src\assets\Poker\Hand-Right.cur") 0 0, auto;
 }
 
-.start-icon {
+.reports-icon {
   width: 32px;
   height: 32px;
-  margin-left: 20px;
+  margin-left: 5px;
   margin-right: 5px;
-  background-image: url("src\assets\images\icons8-pirates-des-caraïbes-32.png");
+  background-image: url("src\assets\images\icons8-tube-à-essai-100.png");
+  background-size: 32px;
+}
+
+.boards-icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url("src\assets\images\icons8-rapport-de-graphique-100.png");
+  background-size: 32px;
+}
+
+.data-icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url("src\assets\images\icons8-dossier-100.png");
+  background-size: 32px;
 }
 
 .config-icon {
   width: 32px;
   height: 32px;
-  margin-left: 20px;
+  margin-left: 5px;
   margin-right: 5px;
   background-image: url("src\assets\images\icons8-gouvernail-de-bateau-32.png");
+  background-size: 32px;
 }
 
-.help-icon {
+.fishtank-icon {
   width: 32px;
   height: 32px;
-  margin-left: 20px;
+  margin-left: 5px;
   margin-right: 5px;
-  background-image: url("src\assets\images\icons8-carte-au-trésor-32.png");
-}
-
-.score-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 20px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\load_icon.png");
-}
-
-.debug-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 20px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-coffre-au-trésor-32.png");
+  background-image: url("src\assets\images\icons8-aquarium-100.png");
+  background-size: 32px;
 }
 
 .button-text {

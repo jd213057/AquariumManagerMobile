@@ -203,8 +203,8 @@ saveParamsInLocalStorage(): void {
   this.AGAINSTALLODDS == true ? localStorage.setItem('AGAINSTALLODDS', 'true') : localStorage.setItem('AGAINSTALLODDS', 'false');
   this.NOBULLSHIT == true ? localStorage.setItem('NOBULLSHIT', 'true') : localStorage.setItem('NOBULLSHIT', 'false');
 }
-
-saveRecord(score: number, code1: boolean, code2: boolean): void {
+}
+/* saveRecord(score: number, code1: boolean, code2: boolean): void {
   let lastIdNb = 0;
   let recordToSave: Save;
   const records = localStorage.getItem('records');
@@ -408,3 +408,4 @@ cleanLocalStorage(): void {
   this.eraseDataMemory();
   localStorage.clear(); }
 }
+ */

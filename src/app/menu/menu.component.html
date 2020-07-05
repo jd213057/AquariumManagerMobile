@@ -5,25 +5,20 @@
 </head>
 <body>
 <div id ="navBar" class="nav-bar">
-<button id = "start" class="button-menu" [ngClass]="this.cursorClass" (click)="startButton()">
-  <div id = "start" class="start-icon"></div>
-  <span id = 'start' class="button-text"><b>Jouer</b></span>
+<button id ="reports" class="button-menu" [ngClass]="this.cursorClass" title= "Créer un Rapport" (click)="startButton()">
+  <div id = "reports" class="reports-icon"></div>
 </button>
-<button id = "help" class="button-menu" [ngClass]="this.cursorClass" (click)="helpButton()">
-  <div class="help-icon"></div>
-  <span class="button-text"><b>Mode d'emploi</b></span>
+<button id ="data" class="button-menu" [ngClass]="this.cursorClass" title= "Mes Rapports" (click)="configButton()">
+  <div class="data-icon"></div>
 </button>
-<button id = "config" class="button-menu" [ngClass]="this.cursorClass" (click)="configButton()">
+<button id ="boards" class="button-menu" [ngClass]="this.cursorClass"  title= "Mes Boards" (click)="helpButton()">
+  <div class="boards-icon"></div>
+</button>
+<button id ="config" class="button-menu" [ngClass]="this.cursorClass" title= "Paramètres" (click)="configButton()">
   <div class="config-icon"></div>
-  <span class="button-text"><b>Configuration</b></span>
 </button>
-<button id= "score" class="button-menu" [ngClass]="this.cursorClass" (click)="scoreButton()">
-  <div class="score-icon"></div>
-  <span class="button-text"><b>Resultats</b></span>
-</button>
-<button id = "debug" class="button-menu" [ngClass]="this.cursorClass" (click)="debugButton()">
-  <div class="debug-icon"></div>
-  <span class="button-text"><b>Debug</b></span>
+<button id ="watcher" class="button-menu" [ngClass]="this.cursorClass" title= "Mode Aquarium" (click)="configButton()">
+  <div class="fishtank-icon"></div>
 </button>
 </div>
 <div class="background-animation">
