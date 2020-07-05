@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AquariumManager';
+  showIntro = true;
+  showGame = false;
+
+constructor() {}
+
+displayApps() {
+this.showIntro = false;
+this.showGame = true;
+}
+
 }
