@@ -35,62 +35,63 @@ export class Save {
 
   getNo2(): number {
     return this.no2;
-  };
-  setNo2(input: number){
+  }
 
-  };
+  setNo2(input: number){
+this.no2 = input;
+  }
 
   getNo3(): number {
     return this.no3;
-  };
+  }
 
   setNo3(input: number) {
     this.no3 = input;
-  };
+  }
 
   getGH(): number {
 return this.gH;
-  };
+  }
 
   setGH(input: number) {
     this.gH = input;
-  };
+  }
 
   getKH(): number {
 return this.kH;
-  };
+  }
 
   setKH(input: number) {
     this.kH = input;
-  };
+  }
 
   getPH(): number {
 return this.pH;
-  };
+  }
 
   setPH(input: number){
     this.pH = input;
-  };
+  }
 
   getCl2(): number {
 return this.cl2;
-  };
+  }
 
   setCl2(input: number) {
 this.cl2 = input;
-  };
+  }
 
   getCo2(): number{
     return this.co2;
-  };
+  }
 
   setCo2(input: number){
     this.co2 = input;
-  };
+  }
 
   getComment(){
 return this.comment;
-  };
+  }
 
   setComment(input: string) {
     this.comment = input;

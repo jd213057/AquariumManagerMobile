@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { AquariumService } from './aquarium.service';
 import { IntroComponent } from './intro/intro.component';
 import { MenuComponent } from './menu/menu.component';
+import { DataComponent } from './data/data.component';
+import { ConfigComponent } from './config/config.component';
+import { MenuTemplateComponent } from './menu-template/menu-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    IntroComponent
+    IntroComponent,
+    DataComponent,
+    ConfigComponent,
+    MenuTemplateComponent
   ],
   imports: [
     ReactiveFormsModule,

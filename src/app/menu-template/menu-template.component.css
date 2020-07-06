@@ -1,16 +1,7 @@
 @font-face {
   src: url("src\assets\fonts\TreasureMapDeadhand-yLA3.ttf");
   font-family: "Pirate Menu";
- }
 
- @keyframes hideNavBar {
-  from {
-    opacity: 70%;
-  }
-
-  to {
-    opacity: 0%;
-  }
  }
 
  @keyframes bubbleOut {
@@ -34,18 +25,18 @@
   }
  }
 
- @keyframes jellyFish {
+ @keyframes jellyFishTemp {
   from {
-    top: 2%;
+    top: 42%;
   }
 
   50% {
-    top: 40%;
+    top: 50%;
     transform: rotate(-20deg);
   }
 
   to {
-    top: 2%;
+    top: 42%;
     transform: rotate(+20deg);
   }
  }
@@ -409,7 +400,7 @@
 
   50% {
     transform: rotate(+10deg);
-    margin-left: 700%;
+    margin-left: 1000%;
     transform: scaleX(1);
   }
 
@@ -521,8 +512,9 @@
 
 html {
 z-index: 1;
-background-size: cover;
-height: 712px;
+height: 135px !important;
+width: 200px !important;
+background-size: contain;
 cursor: url("src\assets\images\starfishcur.cur") 4 12, auto;
 overflow: hidden !important;
 }
@@ -535,20 +527,15 @@ body {
   margin: 0px 0px 0px 0px !important;
 }
 
+.background {
+height: 150px !important;
+width: 200px !important;
+}
+
 .nav-bar {
   display: inline-flex;
-  padding-left: 32.5%;
-  margin-top: 10px;
-}
-
-.small-nav-bar {
-  display: inline-flex;
-  padding-left: 46.5%;
-  margin-top: 10px;
-}
-
-.cursor-in {
-  background-color: cyan !important;
+  margin-left: 8.7px;
+  margin-top: 1.95px;
 }
 
 .button-menu {
@@ -557,117 +544,15 @@ body {
   padding-top: 10px;
   opacity: 80%;
   color: black;
-  width: 60px;
-  height: 60px;
-  margin-left: 20px;
-  border-radius: 90%;
+  width: 32.12px;
+  height: 13.65px;;
+  margin-left: 2.92px;
+  border-radius: 50% 20% / 10% 90%;
   border-color: darkblue;
-  font-size: 22px;
+  font-size: 4px;
   font-family: "Pirate Menu";
-  background-color: white;
-  opacity: 70%;
-  cursor: url("src\assets\Poker\Hand-Right.cur") 0 0, auto;
+  background-color: rgb(244, 226, 150);
 }
-
-.fishtank {
-animation-iteration-count: 1;
-animation-timing-function: ease-out;
-animation-name: hideNavBar;
-animation-duration: 2s;
-animation-delay: 3s;
-animation-fill-mode: forwards;
-}
-
-.fishtank:hover {
-  opacity: 70% !important;
-}
-
-.data-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-tube-à-essai-100.png");
-  background-size: 32px;
-}
-
-
-.reports-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-dossier-100.png");
-  background-size: 32px;
-}
-
-.boards-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-rapport-de-graphique-100.png");
-  background-size: 32px;
-}
-
-.config-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-gouvernail-de-bateau-32.png");
-  background-size: 32px;
-}
-
-.fishtank-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-  margin-right: 5px;
-  background-image: url("src\assets\images\icons8-aquarium-100.png");
-  background-size: 32px;
-}
-
-.button-text {
-  padding-top: 5px;
-  margin-left: 5px;
-}
-
-.other-panel{
-z-index: 30;
-position: absolute;
-top: 55.8px;
-opacity: 70%;
-margin-left: 31.5px;
-margin-top: 65.3px;
-}
-
-.party-panel{
-  z-index: 30;
-  position: absolute;
-  top: 55.8px;
-  margin-left: 31.5px;
-  margin-top: 65.3px;
-  }
-
-.debug-panel {
-  z-index: 30;
-  position: absolute !important;
-  top: 100px;
-  opacity: 70%;
-  margin-top: 111.7px;
-  margin-left: 63.1px;
-}
-
-.exit {
-z-index: 30;
-position: absolute !important;
-top: 50px;
-opacity: 70%;
-margin-top: 200px;
-margin-left: 250px;
-}
-
 
 .right {
 transform: scaleX(-1) !important;
@@ -675,8 +560,8 @@ transform: scaleX(-1) !important;
 
 
 .yellow-fish {
-height: 75px;
-width: 75px;
+  width: 16px;
+  height: 16px;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-name: yellowFishFloatToRight;
@@ -690,9 +575,10 @@ transition: 0.5s;
   }
 
 .salmon-fish {
-  height: 75px;
-  width: 75px;
 z-index: 10;
+margin-top: -10%;
+width: 16px;
+height: 16px;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-name: floatToRight;
@@ -706,10 +592,10 @@ transition: 3s;
   }
 
 .blue-fish {
-  height: 75px;
-  width: 75px;
 opacity: 0%;
 z-index: 10;
+width: 16px;
+height: 16px;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-name: floatToRight;
@@ -724,8 +610,8 @@ transition: 3s;
 
 .normal-fish {
 z-index: 10;
-height: 75px;
-width: 75px;
+width: 16px;
+height: 16px;
 opacity: 0%;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
@@ -738,8 +624,8 @@ animation-delay: 0s;
 z-index: 10;
 position: absolute;
 bottom: 26%;
-height: 75px;
-width: 75px;
+width: 16px;
+height: 16px;
 opacity: 0%;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
@@ -755,10 +641,11 @@ transform: scale(0.25);
 
 .crab {
 z-index: 11;
-height: 75px;
-width: 75px;
+width: 16px;
+height: 16px;
 opacity: 0%;
-margin-top: 11%;
+margin-bottom: 1%;
+margin-top: 6%;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-name: walkLeft;
@@ -769,9 +656,9 @@ animation-delay: 0s;
 .starfish {
 z-index: 1;
 position: absolute;
-height: 75px;
-width: 75px;
-margin-left: 67%;
+width: 16px;
+height: 16px;
+margin-left: 75%;
 bottom: 0%;
 transition: 10s;
 }
@@ -782,16 +669,15 @@ transition: 10s;
 
 .bottle {
 position: absolute;
-height: 75px;
-width: 75px;
-bottom: 0%;
-margin-left: 10%;
+width: 14px;
+height: 14px;
+bottom: 32.3%;
+margin-left: 4%;
 }
 
 .sea-horse {
-height: 75px;
-width: 75px;
-margin-top: 45%;
+width: 14px;
+height: 14px;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-name: seaHorseWalk;
@@ -808,9 +694,9 @@ animation-delay: 0s;
 z-index: 20;
 position: absolute;
 opacity: 0%;
-height: 19.75px;
-width: 19.75px;
-left: 12%;
+height: 4.38px;
+width: 4.38px;
+left: 14%;
 bottom: 20%;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
@@ -823,9 +709,9 @@ animation-delay: 0s;
   z-index: 20;
   position: absolute;
   opacity: 0%;
-  height: 19.75px;
-  width: 19.75px;
-  left: 14%;
+  height: 4.38px;
+  width: 4.38px;
+  left: 16%;
   bottom: 23%;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -838,9 +724,9 @@ animation-delay: 0s;
   z-index: 20;
   position: absolute;
   opacity: 0%;
-  height: 19.75px;
-  width: 19.75px;
-  left: 12%;
+  height: 4.38px;
+  width: 4.38px;
+  left: 14%;
   bottom: 19%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -853,9 +739,9 @@ animation-delay: 0s;
   z-index: 20;
   position: absolute;
   opacity: 0%;
-  height: 19.75px;
-  width: 19.75px;
-  left: 15%;
+  height: 4.38px;
+  width: 4.38px;
+  left: 17%;
   bottom: 22%;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -867,45 +753,18 @@ animation-delay: 0s;
 .jelly-fish {
   z-index: 0;
   position: absolute;
-  height: 75px;
-  width: 75px;
-  right: 22%;
+  height: 14px;
+  width: 14px;
+  right: 17%;
   top: -15%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-name: jellyFish;
+  animation-name: jellyFishTemp;
   animation-duration: 20s;
   animation-delay: 0s;
 }
 
-.screensaver {
-  position: absolute;
-  font-size: 55px;
-  font-family: "Pirate Menu";
-  color: rgb(244, 226, 150);
-  background-color: darkblue;
-  top: 0px;
-  left: 0px;
-  z-index: 1000;
-  width: 1137px;
-  height: 712px;
-  opacity: 0.65;
-  cursor: none;
+.background-animation {
+padding-bottom: 2px;
 }
-
-.screensaver-img {
-  height: 75px;
-  width: 75px;
-  margin-top: 117.8px;
-  margin-left: 535.8px;
-}
-
-.screensaver-text-1 {
-margin-left: 457px;
-}
-
-.screensaver-text-2 {
-margin-left: 302px;
-}
-
 

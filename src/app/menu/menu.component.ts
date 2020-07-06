@@ -8,16 +8,20 @@ import { AquariumService } from '../aquarium.service';
 })
 export class MenuComponent implements OnInit {
   image = this.aquariumService.getBackgroundImg();
-  runningParty = false;
-  helpRequest = false;
+  dataRequest = false;
+  reportsRequest = false;
+  boardsRequest = false;
   configRequest = false;
-  debugRequest = false;
-  scoreRequest = false;
-  exitDialog = false;
+
   onInit = false;
   gameActive = true;
   userEvent = true;
-  cursorClass = '';
+  cursorClassData = '';
+  cursorClassReports = '';
+  cursorClassBoards = '';
+  cursorClassConfig = '';
+  cursorClassFishTank = '';
+  displayNavBar: 'hidden' | 'showHideOption' | 'showNavBar';
   clickSound = new Audio('.\\assets\\sounds\\Button_Press_4-Marianne_Gagnon-570460555.mp3');
   oceanSound = new Audio('.\\assets\\sounds\\OceanTheme.mp3');
   bubbleSound = new Audio('.\\assets\\sounds\\bulles.mp3');
@@ -29,12 +33,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.onInit = true;
+    this.displayNavBar = 'showNavBar';
     this.getControlsChecker();
     this.screenSaverTimer = this.getScreenSaver();
     this.playBackgroundSound();
     this.setAnimationBackground();
-    this.getNavBarFocus();
-    this.activateDebugPanel();
   }
 
   getControlsChecker(): void {
@@ -51,7 +54,7 @@ export class MenuComponent implements OnInit {
 
   getScreenSaver(): void {
       const timer = setInterval((t) => {
-        if (!this.userEvent && !this.runningParty) {
+        if (!this.userEvent && !this.dataRequest) {
           this.gameActive = false;
         }
         this.userEvent = false;
@@ -108,159 +111,112 @@ getMusic(): string {
     return this.aquariumService.getThemeChoice();
   }
 
-getNavBarFocus() {
-    const reportsButton = document.getElementById('reports');
-    const dataButton = document.getElementById('data');
-    const boardsButton = document.getElementById('boards');
-    const configButton = document.getElementById('config');
-    const watcherButton = document.getElementById('watcher');
-    reportsButton.addEventListener('mouseenter', ( event ) => {
-    const e = event.target as HTMLElement;
-    e.style.backgroundColor = 'cyan';
-    }, false);
-    reportsButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
-    dataButton.addEventListener('mouseenter', ( event ) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor  = 'cyan';
-    }, false);
-    dataButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
-    boardsButton.addEventListener('mouseenter', ( event ) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor  = 'cyan';
-    }, false);
-    boardsButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
-    configButton.addEventListener('mouseenter', ( event ) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor  = 'cyan';
-    }, false);
-    configButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
-    watcherButton.addEventListener('mouseenter', ( event ) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor  = 'cyan';
-    }, false);
-    watcherButton.addEventListener('mouseleave', (event) => {
-      const e = event.target as HTMLElement;
-      e.style.backgroundColor = '';
-    }, false);
+  cursorInData(): void {
+    this.cursorClassData = ' cursor-in';
   }
 
-  activateDebugPanel(): void {
-    document.body.onkeydown = (e) => {
-      if (e.ctrlKey && e.altKey) {
-        if (this.aquariumService.getAudio()) {
-          this.clickSound.play();
-        }
-        if (this.gameActive) {
-          this.debugButton();
-        }
-        this.userEvent = true;
-        this.gameActive = true;
-      }
-          };
+  cursorOutData(): void {
+    this.cursorClassData = '';
+  }
+  cursorInReports(): void {
+    this.cursorClassReports = ' cursor-in';
   }
 
-startButton()  {
+  cursorOutReports(): void {
+    this.cursorClassReports = '';
+  }
+  cursorInBoards(): void {
+    this.cursorClassBoards = ' cursor-in';
+  }
+
+  cursorOutBoards(): void {
+    this.cursorClassBoards = '';
+  }
+  cursorInConfig(): void {
+    this.cursorClassConfig = ' cursor-in';
+  }
+
+  cursorOutConfig(): void {
+    this.cursorClassConfig = '';
+  }
+  cursorInFishTank(): void {
+    this.cursorClassFishTank = ' cursor-in';
+  }
+
+  cursorOutFishTank(): void {
+    this.cursorClassFishTank = '';
+  }
+
+dataButton()  {
   if (this.aquariumService.getAudio()) {
     this.clickSound.play();
   }
-  this.helpRequest = false;
+  this.reportsRequest = false;
+  this.boardsRequest = false;
   this.configRequest = false;
-  this.debugRequest = false;
-  this.scoreRequest = false;
-  this.runningParty = true;
+  this.dataRequest = true;
   }
 
-helpButton(): void {
+reportsButton(): void {
   if (this.aquariumService.getAudio()) {
     this.clickSound.play();
   }
-  this.runningParty = false;
+  this.reportsRequest = true;
+  this.boardsRequest = false;
   this.configRequest = false;
-  this.debugRequest = false;
-  this.scoreRequest = false;
-  this.helpRequest = true;
+  this.dataRequest = false;
+  }
+
+boardsButton(): void {
+  if (this.aquariumService.getAudio()) {
+    this.clickSound.play();
+  }
+  this.reportsRequest = false;
+  this.boardsRequest = true;
+  this.configRequest = false;
+  this.dataRequest = false;
   }
 
 configButton(): void {
   if (this.aquariumService.getAudio()) {
     this.clickSound.play();
   }
-  this.runningParty = false;
-  this.helpRequest = false;
-  this.debugRequest = false;
-  this.scoreRequest = false;
+  this.reportsRequest = false;
+  this.boardsRequest = false;
   this.configRequest = true;
+  this.dataRequest = false;
   }
 
-debugButton(): void {
+fishtankButton(): void {
   if (this.aquariumService.getAudio()) {
     this.clickSound.play();
   }
-  this.displayParty();
-  this.displayHelp();
-  this.displayConfig();
-  this.displayScore();
-  this.debugRequest = !this.debugRequest;
+  this.cursorClassFishTank = '';
+  if (!this.reportsRequest &&
+    !this.boardsRequest &&
+    !this.configRequest &&
+    !this.dataRequest) {
+  this.displayNavBar == 'showHideOption' ? this.displayNavBar = 'showNavBar' : this.displayNavBar = 'showHideOption';
   }
-
-  scoreButton(): void {
-    if (this.aquariumService.getAudio()) {
-      this.clickSound.play();
-    }
-    this.runningParty = false;
-    this.helpRequest = false;
-    this.configRequest = false;
-    this.debugRequest = false;
-    this.scoreRequest = true;
-  }
-
-displayParty(): void {
-    this.runningParty = false;
-      }
-
-displayHelp(): void {
-    this.helpRequest = false;
-  }
-
-displayConfig(): void {
-    this.configRequest = false;
-  }
-
-displayDebug(): void {
-    this.debugRequest = false;
-  }
-
-  displayScore(): void {
-    this.scoreRequest = false;
-  }
-
-displayExitDialog(): void {
-  this.exitDialog = false;
+  this.reportsRequest = false;
+  this.boardsRequest = false;
+  this.configRequest = false;
+  this.dataRequest = false;
 }
 
-exitButton() {
-  if (this.aquariumService.getAudio()) {
-    this.clickSound.play();
-  }
-  if (!this.runningParty && !this.helpRequest && !this.configRequest && !this.debugRequest && !this.scoreRequest) {
-      this.exitDialog = true;
-    }
-  this.runningParty = false;
-  this.helpRequest = false;
+hideData(): void {
+  this.dataRequest = false;
+}
+
+hideReports(): void {
+  this.reportsRequest = false;
+}
+
+hideBoards(): void {
+  this.boardsRequest = false;
+}
+
+hideConfig(): void {
   this.configRequest = false;
-  this.scoreRequest = false;
-  this.debugRequest = false;
-  }
+}
 }
